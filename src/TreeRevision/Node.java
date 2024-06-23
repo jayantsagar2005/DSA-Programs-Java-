@@ -1,2 +1,10 @@
-package TreeRevision;public class Node {
+package TreeRevision;
+
+public class Node {
+    int val;
+    Node left;
+    Node right;
+    Node(int val){
+        this.val = val;
+    }
 }
