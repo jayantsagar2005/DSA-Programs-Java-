@@ -1,23 +1,14 @@
 package TreeRevision1;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
-
 public class LevelPrintNthRow {
     public static void nthLevelRowDisplay(Node root, int level, int n) {
-        if(root == null) return;
-        Queue<Node> q = new ArrayDeque<>();
-        q.add(root);
+        if (root == null) return;
 
-        while (!q.isEmpty()){
-            Node temp = q.remove();
-            if (level == n){
-                System.out.print(temp.val+" ");
-            }
-
-            if (temp.left != null) nthLevelRowDisplay(temp.left, level+1, n);
-            if (temp.right != null) nthLevelRowDisplay(temp.right,level+1, n);
+        if(level == n){
+            System.out.print(root.val+" ");
         }
+        nthLevelRowDisplay(root.left, level+1, n);
+        nthLevelRowDisplay(root.right, level+1, n);
 
     }
     public static void main(String[] args) {
@@ -44,6 +35,6 @@ public class LevelPrintNthRow {
         g.left = k; g.right = l;
         l.right  = m;
 
-        nthLevelRowDisplay(a,0,2);
+        nthLevelRowDisplay(a,0,4);
     }
 }

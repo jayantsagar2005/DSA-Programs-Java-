@@ -1,15 +1,36 @@
 package TreeRevision1;
 
-public class LevelDisplayWithoutQueue {
-    public static int findLevel(Node root) {
-        if (root == null) return 0;
-        return 1 + Math.max(findLevel(root.left),findLevel(root.right));
-    }
-    public static void levelWiseDisplay(Node root, int n, int level) {
+import java.util.ArrayDeque;
+import java.util.Queue;
+
+public class PrintLnQueue {
+
+    public static void printLevel(Node root) {
         if (root == null) return;
-        if (level == n) System.out.print(root.val+" ");
-        levelWiseDisplay(root.left, n, level+1);
-        levelWiseDisplay(root.right, n, level+1);
+        Queue<Pair> q = new ArrayDeque<>();
+        q.add(new Pair(root, 0));
+        int preLevel = 0;
+
+        while(!q.isEmpty()){
+
+            Pair front = q.remove();
+            Node temp = front.node;
+            int level = front.level;
+
+            if (level != preLevel){
+                preLevel = level;
+                System.out.println();
+            }
+
+            System.out.print(temp.val+" ");
+
+
+
+            if (temp.left != null)  q.add(new Pair(temp.left, level+1));
+
+            if (temp.right != null) q.add(new Pair(temp.right, level+1));
+
+        }
     }
     public static void main(String[] args) {
         Node a = new Node(1);
@@ -35,11 +56,6 @@ public class LevelDisplayWithoutQueue {
         g.left = k; g.right = l;
         l.right  = m;
 
-        int level = findLevel(a);
-
-        for (int x=0; x<level; x++){
-            levelWiseDisplay(a,x,0);
-            System.out.println();
-        }
+        printLevel(a);
     }
 }
