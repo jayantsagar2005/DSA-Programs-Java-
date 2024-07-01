@@ -6,31 +6,29 @@ import java.util.Queue;
 public class LevelOrderDisplay {
 
     public static void levelOrderDisplay(Node root) {
-        if (root == null) return;
+        if(root == null) return;
         Queue<Node> q = new ArrayDeque<>();
         q.add(root);
 
-        while (!q.isEmpty()){
+        while(!q.isEmpty()){
             Node temp = q.remove();
             System.out.print(temp.val+" ");
             if (temp.left != null) q.add(temp.left);
             if (temp.right != null) q.add(temp.right);
         }
-
     }
 
     public static void levelOrderDisplayRightToLeft(Node root) {
-        if (root == null) return;
+        if(root == null) return;
         Queue<Node> q = new ArrayDeque<>();
         q.add(root);
 
-        while (!q.isEmpty()){
+        while(!q.isEmpty()){
             Node temp = q.remove();
             System.out.print(temp.val+" ");
             if (temp.right != null) q.add(temp.right);
             if (temp.left != null) q.add(temp.left);
         }
-
     }
     public static void main(String[] args) {
         Node a = new Node(1);
