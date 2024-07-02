@@ -4,7 +4,6 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 public class PrintLnQueue {
-
     public static void printLevel(Node root) {
         if (root == null) return;
         Queue<Pair> q = new ArrayDeque<>();
