@@ -1,33 +1,34 @@
 package TreeRevision1;
 
-import java.util.ArrayDeque;
+import java.util.LinkedList;
 import java.util.Queue;
 
 public class LevelOrderDisplay {
 
     public static void levelOrderDisplay(Node root) {
+        Queue<Node> q = new LinkedList<>();
         if(root == null) return;
-        Queue<Node> q = new ArrayDeque<>();
         q.add(root);
 
         while(!q.isEmpty()){
-            Node temp = q.remove();
-            System.out.print(temp.val+" ");
-            if (temp.left != null) q.add(temp.left);
-            if (temp.right != null) q.add(temp.right);
+            Node node = q.remove();
+            System.out.print(node.val+" ");
+            if(node.left != null) q.add(node.left);
+            if(node.right != null) q.add(node.right);
         }
+
     }
 
     public static void levelOrderDisplayRightToLeft(Node root) {
+        Queue<Node> q = new LinkedList<>();
         if(root == null) return;
-        Queue<Node> q = new ArrayDeque<>();
         q.add(root);
 
         while(!q.isEmpty()){
-            Node temp = q.remove();
-            System.out.print(temp.val+" ");
-            if (temp.right != null) q.add(temp.right);
-            if (temp.left != null) q.add(temp.left);
+            Node node = q.remove();
+            System.out.print(node.val+" ");
+            if(node.right != null) q.add(node.right);
+            if(node.left != null) q.add(node.left);
         }
     }
     public static void main(String[] args) {

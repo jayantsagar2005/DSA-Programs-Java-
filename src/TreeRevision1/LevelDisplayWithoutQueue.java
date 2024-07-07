@@ -6,8 +6,8 @@ public class LevelDisplayWithoutQueue {
         return 1 + Math.max(findLevel(root.left),findLevel(root.right));
     }
     public static void levelWiseDisplay(Node root, int n, int level) {
-        if (root == null) return;
-        if (level == n) System.out.print(root.val+" ");
+        if(root == null) return;
+        if(n == level) System.out.print(root.val+" ");
         levelWiseDisplay(root.left, n, level+1);
         levelWiseDisplay(root.right, n, level+1);
     }

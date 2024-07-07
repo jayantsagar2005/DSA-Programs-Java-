@@ -3,12 +3,9 @@ package TreeRevision1;
 public class LevelPrintNthRow {
     public static void nthLevelRowDisplay(Node root, int level, int n) {
         if (root == null) return;
-
-        if(level == n){
-            System.out.print(root.val+" ");
-        }
-        nthLevelRowDisplay(root.left, level+1, n);
+        if(level == n) System.out.print(root.val+" ");
         nthLevelRowDisplay(root.right, level+1, n);
+        nthLevelRowDisplay(root.left, level+1, n);
 
     }
     public static void main(String[] args) {
@@ -35,6 +32,6 @@ public class LevelPrintNthRow {
         g.left = k; g.right = l;
         l.right  = m;
 
-        nthLevelRowDisplay(a,0,4);
+        nthLevelRowDisplay(a,0,2);
     }
 }
