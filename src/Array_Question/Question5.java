@@ -5,7 +5,7 @@ package Array_Question;
 public class Question5 {
     public static void main(String[] args) {
 
-        int[] array = {1,2,3, 4, 5,6, 7, 8};
+        int[] array = { 1, 2, 3, 4, 5, 7, 8};
         boolean flag = false;
 
         int j = array[0];
