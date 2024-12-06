@@ -13,7 +13,7 @@ public class SubsetString {
     }
 
     public static void main(String[] args) {
-        String s = "happy";
+        String s = "aaa";
         print(s,0,"");
     }
 
